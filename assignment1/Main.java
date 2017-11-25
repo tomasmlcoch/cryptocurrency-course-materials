@@ -47,6 +47,7 @@ public class Main {
         UTXO utxo = new UTXO(tx.getHash(),0);
         utxoPool.addUTXO(utxo, tx.getOutput(0));
 
+        System.out.println(tx.getHash());
         /*  
          * Set up a test Transaction
          */
@@ -59,7 +60,7 @@ public class Main {
         // the same address (Alice)
         tx2.addOutput(5, pk_alice.getPublic());
         tx2.addOutput(3, pk_alice.getPublic());
-        tx2.addOutput(2, pk_alice.getPublic());
+        tx2.addOutput(2, pk_alice.getPublic());        
         // Note that in the real world fixed-point types would be used for the values, not doubles.
         // Doubles exhibit floating-point rounding errors. This type should be for example BigInteger
         // and denote the smallest coin fractions (Satoshi in Bitcoin).
